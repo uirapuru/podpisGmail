@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -19,7 +20,12 @@ class InputType extends AbstractType
             ->add("position", TextType::class, ["label" => "Stanowisko", "attr" => ["placeholder" => "np. Programista PHP"]])
             ->add("email", TextType::class, ["label" => "Adres email", "attr" => ["placeholder" => "np. jan@kowalski.pl"]])
             ->add("mobile", TextType::class, ["label" => "Numer telefonu", "attr" => ["placeholder" => "np. +48 604 000 000"]])
-            ->add("www", HiddenType::class, ["data" => "http://coders.expert"])
+            ->add("www", TextType::class, ["data" => "http://coders.expert"])
+            ->add("img", ChoiceType::class, ["data" => "logo.png", "choices" => [
+                "FutureNetFoundation" => "fundacja.jpg",
+                "FutureNet" => "future.png",
+                "CodersHouse" => "logo.png"
+            ]])
             ->add("submit", SubmitType::class, ["label" => "Wygeneruj stopkę!", "attr" => []])
         ;
     }
