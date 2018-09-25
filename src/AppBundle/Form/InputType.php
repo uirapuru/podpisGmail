@@ -22,6 +22,7 @@ class InputType extends AbstractType
             ->add("img", ChoiceType::class, ["choices" => [
                 "FutureNetFoundation" => "fundacja.jpg",
                 "FutureNet" => "future.png",
+                "FutureNet blue" => "fn_blue.png",
                 "CodersHouse" => "logo.png",
                 "FutureNet Cafe" => "fncafe.png",
 
